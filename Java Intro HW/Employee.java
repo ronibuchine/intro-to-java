@@ -49,7 +49,6 @@ public abstract class Employee {
         return s+id+'\n'+s2+firstName+'\n'+s3+lastName;
     }
 
-   
     public boolean equals(Employee e) {
         return firstName==e.firstName && lastName==e.lastName && id==e.id;
     }

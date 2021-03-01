@@ -39,6 +39,6 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     }
 
     public boolean equals(BasePlusCommissionEmployee e) {
-        return super.equals(e) && e.baseSalary==baseSalary;
+        return (super.equals(e) && e.baseSalary==baseSalary);
     }
 }
