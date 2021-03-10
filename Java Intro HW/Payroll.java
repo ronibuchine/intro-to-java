@@ -1,12 +1,16 @@
 import java.util.ArrayList;
+import Employees.*;
 
 
 public class Payroll {
     public static void main(String[] args) {
-        ArrayList<Employee> employees = new ArrayList<Employee>(3); 
+        ArrayList<Employee> employees = new ArrayList<Employee>(3);    
+        
+        // The following code can throw an exception if negative values are entered
         employees.add(0, new HourlyEmployee("John", "Finkelstein", 212411234, 180, 60));
         employees.add(1, new CommissionEmployee("Ray", "Romano", 287912123, 50000, 15));
-        employees.add(2, new BasePlusCommissionEmployee("Roni", "Buchine", 387918273, 10000, 10, 10000));              
+        employees.add(2, new BasePlusCommissionEmployee("Roni", "Buchine", 387918273, 10000, 10, 10000));  
+
         for (Employee e : employees) {
             float salary = e.earnings();
             if (e instanceof BasePlusCommissionEmployee) {

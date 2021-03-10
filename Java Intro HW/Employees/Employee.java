@@ -1,14 +1,19 @@
+package Employees;
+
 public abstract class Employee {
+
     String firstName;
     String lastName;
     int id;
 
     // Constructors
-    public Employee(String fn, String ln, int i) {
+    public Employee(String fn, String ln, int i) throws IllegalArgumentException{
         firstName = fn;
         lastName = ln;
+        if (i < 0) throw new IllegalArgumentException("Error: Cannot enter negative ID no.");
         id = i;
     } 
+    
     public Employee() {
         firstName = "plony";
         lastName = "almony";
@@ -49,9 +54,12 @@ public abstract class Employee {
         return s+id+'\n'+s2+firstName+'\n'+s3+lastName;
     }
 
-    public boolean equals(Employee e) {
-        return firstName==e.firstName && lastName==e.lastName && id==e.id;
+    @Override
+    public boolean equals(Object obj) {        
+        Employee other = (Employee)obj;
+        return (this.firstName == other.firstName && this.lastName == other.lastName && this.id== other.id);
     }
+    
 
     public abstract float earnings();  
 
