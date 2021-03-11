@@ -55,7 +55,9 @@ public abstract class Employee {
     }
 
     @Override
-    public boolean equals(Object obj) {        
+    public boolean equals(Object obj) {  
+        if (obj == this) return true;
+        if (!(obj instanceof Employee)) return false; 
         Employee other = (Employee)obj;
         return (this.firstName == other.firstName && this.lastName == other.lastName && this.id== other.id);
     }

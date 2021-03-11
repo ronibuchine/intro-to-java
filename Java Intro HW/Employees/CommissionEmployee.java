@@ -46,7 +46,9 @@ public class CommissionEmployee extends Employee {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) {  
+        if (obj == this) return true;
+        if (!(obj instanceof CommissionEmployee)) return false; 
         CommissionEmployee other = (CommissionEmployee)obj;
         return super.equals(obj) && grossSales==other.grossSales && commission==other.commission;
     }

@@ -51,8 +51,10 @@ public class HourlyEmployee extends Employee {
     }
 
     @Override
-    public boolean equals(Object obj) {        
-        HourlyEmployee other = (HourlyEmployee)obj;          
+    public boolean equals(Object obj) {  
+        if (obj == this) return true;
+        if (!(obj instanceof HourlyEmployee)) return false; 
+        HourlyEmployee other = (HourlyEmployee)obj;
         return super.equals(obj) && hours==other.hours && wage==other.wage;
     }
 }
